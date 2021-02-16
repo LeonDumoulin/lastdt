@@ -4,26 +4,27 @@
 <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
+
             </tr>
         </thead>
-<tbody></tbody>
         <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
+                <th>سس</th>
             </tr>
         </tfoot>
-    </table> </div>
+    </table>
+     </div>
 </template>
 <script>
 
@@ -46,14 +47,18 @@ data() {
             onScriptLoaded() {
                 this.externalLoaded = true;
                 console.log('script loaded');
-                    this.dataTable = $('#example').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            "url": "http://localhost:3001/res",
-            "dataType": "jsonp"
-        }
-    });
+                this.dataTable = $('#example').DataTable( {
+        "ajax": "http://mohamedkhalid.brandup.ninja/api/v1/faculty/index",
+        "columns": [
+            { "data": "id" },
+            { "data": "name" },
+            { "data": "des" },
+            { "data": "image" },
+            { "data": "created_at" },
+            { "data": "updated_at" }
+        ]
+    } );
+                  
             }
            
         }
